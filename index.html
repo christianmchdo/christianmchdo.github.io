@@ -59,7 +59,7 @@
 </h1>
 </header>
 <div class="aboutme-description">
-    <p>
+    <p >
         Estudiante de la <span>Universidad Alonso De Ojeda</span>.la Universidad Alonso de Ojeda es una universidad privada localizada en la Ciudad de Ojeda del Estado Zulia, Venezuela.
 
         El proyecto de creación de la Universidad Alonso de Ojeda, se remonta al año de 1997 con el objetivo de crear una institución de educación superior que cumpliera actividades de docencia, investigación y extensión conforme a lo pautado en la Ley de Universidades, para beneficio de los jóvenes bachilleres y sus familiares de Ciudad Ojeda en particular y de toda la Costa Oriental del Lago de Maracaibo en general, además de tener incidencia en el desarrollo social, cultural, educativo, económico, científico y tecnológico de la región.Festival Científico de la Universidad Alonso de Ojeda. 
@@ -170,7 +170,9 @@ HTML5
 <!-- esta es la seccion de trabajo -->
 <section id="works" class="works">
 <header>
-<h1 class=" title-underline"><span>Redes Sociales</span></h1>
+<h1 class=" title-underline">
+    <span>Redes Sociales</span>
+</h1>
 </header>
 <div class="works-wrapper">
     <article class="works-item">
@@ -232,7 +234,7 @@ HTML5
                            <label for="useremail">correo</label>
                        </div>
                    <div>
-                       <input id="useremail" type="email" class="contact-input-text" required/>
+                       <input id="useremail" placeholder="ingresa tu email" type="email" class="contact-input-text" required/>
                    </div>
                    </div>
                    <div class="contact-column right">
@@ -240,7 +242,7 @@ HTML5
                             <label for="username">nombre</label>
                         </div>
                     <div>
-                        <input id="username" type="name" class="contact-input-text" required/>
+                        <input id="username" placeholder="ingresa tu nombre" type="name" class="contact-input-text" required/>
                     </div>
                 
                 </div>
@@ -252,7 +254,7 @@ HTML5
                 <label for="usermessage">message</label>
                 </div>
                 <div>
-                    <textarea name="usermessage" id="usermessage" cols="30" rows="3"required></textarea>
+                    <textarea  placeholder="ingresa un comentario" name="usermessage"  id="usermessage" cols="30" rows="3"required></textarea>
                 </div> 
                 </div>
                 </div>
@@ -264,30 +266,71 @@ HTML5
 </section>
 <!--seccion  de video -->
 <section>
+    
         <header>
-                <h1 class="title-underline">
-                    <span>video</span> 
-        </h1>
+                <h1 class="title-underline"><span>video sobre las Cookies</span> </h1>
             </header> 
-<div class="video-wrapper">
+       
+            <div class="video-wrapper">
       
     
-    <article class="video-item">
-<div class="video-img-item">
-    <video src="videocat/videocat.MP4" controls="controls"></video>
-</div>
-<div >
+                    <article class="video-item">
+                <div class="video-img-item">
+                    <video src="video/videocookie.mp4" controls="controls"></video>
+                </div>
+                <div >
+                    <header>
+                        <h2>
+                           video  
+                        </h2>
+                    </header>
+                </div>
+                    </article>
+                </div> 
+</section>
+<!--cookiesdefinicion-->
+<section>
     <header>
-        <h2>
-           video  
-        </h2>
+        <h1 class="title-underline" ><span>Las cookies</span></h1>
     </header>
-</div>
+    <article class="cookiesdescription">
+        <p>
+            Una cookie es un archivo creado por un sitio web que contiene pequeñas cantidades de datos y que se envían entre un emisor y un receptor. En el caso de Internet el emisor sería el servidor donde está alojada la página web y el receptor es el navegador que usas para visitar cualquier página web. Como ejemplo; tenemos este simple boton de un selector de colores, el cual cumple la simple funcion de una cookies, el cual al momento de escoger un color, ese color queda guardado, para comprobarlo se cierra la pagina, luego vamos al historial del navegador y abrimos otra vez la pagina y veremos que el color que se escogio, quedo guardado. 
+        </p>
     </article>
-</div>
+</section>
+<!--seccion  de cookies -->
+<section class="botoncolor">
+<select class="selectordecolor" id="ddltheme" onchange="setcolor()">
+<option class="selectordecolor" value="select color">select color</option>
+<option class="selectordecolor" value="red">red</option>
+<option class="selectordecolor" value="green">green</option>
+<option class="selectordecolor" value="blue">blue</option>
+</select>
+<script type="text/javascript">
+window.onload = function() {
+    if (document.cookie.length !=0) {
+var namevaluearray = document.cookie.split("=");
+document.bgColor = namevaluearray [1];
+document.getElementById("ddltheme").value = namevaluearray[1];
+    }
+}
+
+function setcolor()
+{
+    var selectedcolor = document.getElementById("ddltheme").value;
+    if(selectedcolor != "select color")
+    {
+        document.bgColor= selectedcolor;
+        document.cookie= "color=" + selectedcolor + ";expires=fri, 5 nov 2011 01:00:00 UTC;";
+    }
+}
+
+</script>
+
 </section>
 
-<!--seccion del footer-->
+<!-- seccion del footer-->
  <section>
 <div class="footer-wrapper">
     <p class="footer-text"> Hecho por christian como practica del curso de HTML5 y CSS3
